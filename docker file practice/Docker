@@ -1,5 +1,7 @@
 FROM nginx
 
+WORKDIR /workspaces/terraform_three_tier
+
 RUN sudo apt install nginx-server -y
 
 RUN systemctl enable nginx
