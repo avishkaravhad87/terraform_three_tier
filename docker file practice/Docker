@@ -1,13 +1,4 @@
-FROM nginx
-
-WORKDIR /workspaces/terraform_three_tier
-
-RUN sudo apt install nginx-server -y
-
-RUN systemctl enable nginx
-
-RUN systemctl start nginx
-
-EXPOSE  80
-
-
+FROM nginx:latest
+COPY .nginx.config /etc/nginx.conf
+EXPOSE 80
+CMD [ "nginx", "-g" ,"daemon off;" ]
