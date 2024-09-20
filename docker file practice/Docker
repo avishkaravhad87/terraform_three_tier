@@ -1,5 +1,10 @@
 FROM nginx
+
+RUN sudo apt install nginx-server -y
+
 RUN systemctl enable nginx
+
 RUN systemctl start nginx
+
 
 
