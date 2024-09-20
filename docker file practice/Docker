@@ -6,5 +6,6 @@ RUN systemctl enable nginx
 
 RUN systemctl start nginx
 
+EXPOSE  80
 
 
