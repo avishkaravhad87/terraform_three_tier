@@ -1,0 +1,6 @@
+FROM nginx
+WORKDIR /docker file practice
+RUN systemctl enable nginx
+RUN systemctl start nginx
+
+
