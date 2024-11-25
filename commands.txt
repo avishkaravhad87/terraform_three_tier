@@ -1,0 +1,90 @@
+1  ls
+    2  sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+    3  wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+    4  gpg --no-default-keyring --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint
+    5  echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+    6  sudo apt update
+    7  sudo apt-get install terraform
+    8  terraform -help plan
+    9  clear
+   10  sudo apt-get update
+   11  sudo apt-get install apt-transport-https ca-certificates gnupg curl
+   12  curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+   13  curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+   14  curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+   15  echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+   16  echo "deb https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+   17  sudo apt-get update && sudo apt-get install google-cloud-cli
+   18  clear
+   19  mkdir terraform
+   20  ls
+   21  cd terraform/
+   22  ls
+   23  vim provider.tf
+   24  ls
+   25  vim main.tf
+   26  ls
+   27  cat provider.tf 
+   28  vim provider.tf 
+   29  ls
+   30  terraform init
+   31  terraform plan
+   32  vim main.tf 
+   33  terraform plan
+   34  vim provider.tf 
+   35  clear
+   36  terraform plan
+   37  gcloud config get-value project
+   38  gcloud --version
+   39  gcloud config get-value project
+   40  clear
+   41  ls
+   42  vim main.tf 
+   43  ls
+   44  vim provider.tf 
+   45  ls
+   46  '
+
+
+
+   47  terraform plan
+   48  vim main.tf 
+   49  vim provider.tf 
+   50  terraform plan
+   51  gcloud auth application-default login
+   52  sudo apt update
+   53  cd ..
+   54  sudo apt update
+   55  cd terraform/
+   56  apt update
+   57  grep -r "https://packages.cloud.google.com/apt" /etc/apt/sources.list /etc/apt/sources.list.d/
+   58  sudo nano /etc/apt/sources.list.d/google-cloud-sdk.list
+   59  curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo tee /usr/share/keyrings/cloud.google.gpg > /dev/null
+   60  sudo apt update
+   61  sudo apt install -y apt-transport-https ca-certificates gnupg
+   62  sudo apt install -y google-cloud-cli
+   63  curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+   64  echo "deb https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+   65  sudo apt update
+   66  sudo nano /etc/apt/sources.list.d/google-cloud-sdk.list
+   67  sudo apt update
+   68  sudo apt install -y google-cloud-cli
+   69  curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-431.0.0-linux-x86_64.tar.gz
+   70  tar -xvzf google-cloud-cli-431.0.0-linux-x86_64.tar.gz
+   71  ./google-cloud-sdk/install.sh
+   72  export PATH=$PATH:$HOME/google-cloud-sdk/bin
+   73  source ~/.bashrc
+   74  gcloud version
+   75  gcloud auth application-default login
+   76  gcloud auth application-default set-quota-project flowing-access-433413-d5
+   77  gcloud auth application-default print-access-token
+   78  gcloud components update
+   79  ls
+   80  terraform init
+   81  terraform plan
+   82  terraform apply -auto-approve
+   83  gcloud beta billing projects describe flowing-access-433413-d5
+   84  vim main.tf 
+   85  terraform apply -auto-approve
+   86  history
